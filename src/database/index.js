@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const URI = 'mongodb+srv://relatorio-ivt:zizu0255@cluster0.dubd4.mongodb.net/relatorioivt'
+require('dotenv').config();
 
 const mongoDBConnect = async () => {
-   await mongoose.connect(URI,{ 
+   await mongoose.connect(`${process.env.MONGODB_URI}`,{ 
        useUnifiedTopology: true , 
        useNewUrlParser: true }); 
    console.log('db connected ..');  
