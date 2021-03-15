@@ -5,6 +5,10 @@ const DataSchema = new mongoose.Schema({
         type: String,
         require:true,
     },
+    equipe: {
+        type: String,
+        require:true,
+    },
     clientes: {
         type: String,
         require:true,
