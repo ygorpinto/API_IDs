@@ -8,8 +8,8 @@ router.get('/listall', async (req,res) => {
     return res.send(data)
 });
 
-router.get('/listone', async (req, res) => {
-    const data = await Data.findOne(req.body);
+router.get('/list/:name', async (req, res) => {
+    const data = await Data.findOne(req.params.name);
     return res.send(data);
 });
 
