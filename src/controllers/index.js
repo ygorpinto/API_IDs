@@ -9,7 +9,7 @@ router.get('/listall', async (req,res) => {
 });
 
 router.get('/list/:name', async (req, res) => {
-    const data = await Data.find(req.params.name);
+    const data = await Data.findOne({name:req.params.name}).exec();
     return res.send(data);
 });
 
