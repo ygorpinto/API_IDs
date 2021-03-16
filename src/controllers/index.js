@@ -8,6 +8,11 @@ router.get('/listall', async (req,res) => {
     return res.send(data)
 });
 
+router.post('/listone', async (req, res) => {
+    const data = await Data.findOne(req.body);
+    return res.send(data);
+});
+
 router.post('/add', async (req, res) => {
     const data = await Data.create(req.body);
     return res.send(data);
