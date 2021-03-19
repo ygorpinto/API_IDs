@@ -1,12 +1,15 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import dotenv from 'dotenv'
 
-require('dotenv').config();
+dotenv.config();
+
+const MONGOURI = process.env.MONGODB_URI
 
 const mongoDBConnect = async () => {
-   await mongoose.connect(`${process.env.MONGODB_URI}`,{ 
+   await mongoose.connect(MONGOURI,{ 
        useUnifiedTopology: true , 
        useNewUrlParser: true }); 
    console.log('db connected ..');  
 }
 
-module.exports = mongoDBConnect;
+export default mongoDBConnect;

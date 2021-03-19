@@ -1,35 +1,12 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
-const DataSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
+
     name: {
         type: String,
         require:true,
     },
-    equipe: {
-        type: String,
-        require:true,
-    },
-    clientes: {
-        type: String,
-        require:true,
-    },
-    fundos: {
-        type:String,
-        require:true,
-    },
-    reuniao:{
-        type:String,
-        require:true,
-    },
-    sistema:{
-        type: String,
-        require:true,
-    },
-    performit:{
-        type: String,
-        require:true,
-    },
-    conhecimento:{
+    email: {
         type: String,
         require:true,
     },
@@ -39,6 +16,6 @@ const DataSchema = new mongoose.Schema({
     }
 });
 
-const Data = mongoose.model('Data',DataSchema);
+const Data = mongoose.model('Data',UserSchema);
 
-module.exports = Data;
+export default Data;

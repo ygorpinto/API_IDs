@@ -1,26 +1,42 @@
-const Data = require('../data/index');
-const express = require('express');
+import Data from '../data/index.js';
+import express from 'express';
 
 const router = express.Router();
 
 router.get('/listall', async (req,res) => {
-    const data = await Data.find();
-    return res.send(data)
+    try {
+        const data = await Data.find();
+        return res.send(data);
+    } catch (err){
+        return res.send(err);
+    }
 });
 
 router.get('/list/:name', async (req, res) => {
-    const data = await Data.findOne({name:req.params.name}).exec();
-    return res.send(data);
+    try{
+        const data = await Data.find({name:req.params.name}).exec();
+        return res.send(data);
+    } catch(err){
+        return res.send(err);
+    }
 });
 
 router.post('/add', async (req, res) => {
-    const data = await Data.create(req.body);
-    return res.send(data);
+    try {
+        const data = await Data.create(req.body);
+        return res.send(data);
+    } catch (err) {
+        return res.send(err);
+    }
 });
 
 router.delete('/delete', async (req,res) => {
-    const data = await Data.findOneAndDelete(req.body);
-    return res.send(data);
+    try{
+        const data = await Data.deleteMany();
+        return res.send(data);
+    } catch (err) {
+        return res.send(err);
+    }
 })
 
-module.exports = router;
+export default router;
