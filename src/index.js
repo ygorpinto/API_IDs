@@ -1,7 +1,7 @@
 import express from 'express';
-import mongoDBConnect from './database/index.js'
+import mongoDBConnect from './database/db.js'
 import cors from 'cors'
-import router from './controllers/index.js'
+import router from './controllers/controllers.js'
 
 const app = express();
 

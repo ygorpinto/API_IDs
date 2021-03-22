@@ -1,4 +1,4 @@
-import Data from '../data/index.js';
+import Data from '../data/dataSchema.js';
 import express from 'express';
 
 const router = express.Router();
