@@ -23,7 +23,10 @@ router.get('/list/:name', async (req, res) => {
 
 router.post('/add', async (req, res) => {
     try {
-        const data = await Data.create(req.body);
+        const data = await Data.insertOne({
+            name:req.body,
+            email:req.body
+        });
         return res.send(data);
     } catch (err) {
         return res.send(err);
