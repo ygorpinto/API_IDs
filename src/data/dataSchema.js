@@ -2,17 +2,17 @@ import mongoose from 'mongoose'
 
 const UserSchema = new mongoose.Schema({
 
-    name: {
+    id: {
         type: String,
         required:true,
     },
-    email: {
+    question: {
         type: String,
         required:true,
     },
-    createdAt:{
-        type: Date,
-        dafault:Date.now,
+    options:{
+        type: Object,
+        required:true
     }
 });
 
