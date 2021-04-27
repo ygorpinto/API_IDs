@@ -5,16 +5,8 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required:true,
     },
-    total: {
+    id:{
         type: String,
-        required:true,
-    },
-    question: {
-        type: String,
-        required:true,
-    },
-    options:{
-        type: Object,
         required:true
     }
 });
