@@ -1,8 +1,11 @@
 import mongoose from 'mongoose'
 
 const UserSchema = new mongoose.Schema({
-
-    id: {
+    grupo: {
+        type: String,
+        required:true,
+    },
+    total: {
         type: String,
         required:true,
     },
