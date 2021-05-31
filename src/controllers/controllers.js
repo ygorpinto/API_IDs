@@ -30,9 +30,9 @@ router.post('/add', async (req, res) => {
     }
 });
 
-router.delete('/delete/:name', async (req,res) => {
+router.delete('/cleanall', async (req,res) => {
     try{
-        const data = await Data.findOneAndDelete({name:req.params.name});
+        const data = await Data.deleteMany();
         return res.send(data);
     } catch (err) {
         return res.send(err);
